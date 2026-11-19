@@ -44,9 +44,10 @@ namespace GraphicEngine
             {
                 byte* pixels = (byte*)bitmap.BackBuffer;
 
-                for(int i = 0; i < this.pixels.GetPixels().Length; i++)
+                var pixelsArray = this.pixels.GetPixels();
+                for (int i = 0; i < pixelsArray.Length; i++)
                 {
-                    pixels[i] = this.pixels.GetPixels()[i];
+                    pixels[i] = pixelsArray[i];
                 }
             }
 
