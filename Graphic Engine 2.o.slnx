@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="Graphic Engine 2.o/Graphic Engine 2.o.csproj" />
+  <Project Path="Common2D/Common2D.csproj" Id="fe6b7178-a56b-447c-9d9f-f6c398bc4f58" />
+  <Project Path="GraphicEngine/GraphicEngine.csproj" Id="60fe30b6-2ef4-41a5-a82b-92f5790035e5" />
 </Solution>
