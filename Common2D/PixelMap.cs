@@ -23,22 +23,9 @@ namespace Common2D
 
         internal PixelMap()
         {
-            pixels = new Pixel<TColorScheme>[Height* Width];
+            pixels = new Pixel<TColorScheme>[Height * Width];
 
-            for(int i = 0; i < Height; i++)
-            {
-                for (int j = 0; j < Width; j++)
-                {
-                    pixels[Index2D(i, j)] = new Pixel<TColorScheme>(TColorScheme.Red);
-                }
-            }
-
-            for (int i = 0; i < Height; i++)
-            {
-                SetPixel(0, i, TColorScheme.Black);
-                SetPixel(1, i, TColorScheme.Black);
-
-            }
+            Array.Fill(pixels, new Pixel<TColorScheme>(TColorScheme.White));  
         }
 
         public void SetPixel(int width, int height, Pixel<TColorScheme> pixel)
