@@ -1,4 +1,5 @@
 ﻿using Common2D;
+using Common2D.ColorScheme;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,7 +19,7 @@ namespace GraphicEngine
     public partial class MainWindow : Window
     {
         WriteableBitmap bitmap;
-        PixelMap pixels = new PixelMap();
+        PixelMap<BGRA> pixels = PixelMap.GetBGRAPixelMap();
 
         public MainWindow()
         {

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Common2D.ColorScheme
 {
+    [DebuggerDisplay("R={r}, G={g}, B={b}, A={a}")]
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct BGRA : IBGRA<BGRA>
     {
@@ -14,6 +16,18 @@ namespace Common2D.ColorScheme
         public static readonly BGRA Red = new BGRA(0, 0, 255, 255);
         public static readonly BGRA Transparent = new BGRA(0, 0, 0, 0);
         public static readonly BGRA White = new BGRA(255, 255, 255, 255);
+
+        static BGRA IColorDefaults<BGRA>.Black => Black;
+
+        static BGRA IColorDefaults<BGRA>.Blue => Blue;
+
+        static BGRA IColorDefaults<BGRA>.Green => Green;
+
+        static BGRA IColorDefaults<BGRA>.Red => Red;
+
+        static BGRA IColorDefaults<BGRA>.Transparent => Transparent;
+
+        static BGRA IColorDefaults<BGRA>.White => White;
 
         #region base
         private byte b, r, g, a;
@@ -33,6 +47,8 @@ namespace Common2D.ColorScheme
             this.r = r;
             this.a = a;
         }
+
+     
 
         public void SetFromBytes(byte b, byte g, byte r, byte a)
         {
